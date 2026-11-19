@@ -214,6 +214,7 @@ jobs:
       id: compile
       run: |
         cd openwrt
+        sed -i 's/llvm.download-ci-llvm=true/llvm.download-ci-llvm=false/g' feeds/packages/lang/rust/Makefile
         echo -e "$(nproc) thread compile"
         free -h
         df -hT
