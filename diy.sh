@@ -52,10 +52,10 @@ case "$STAGE" in
     cat .config.base .config.delta > .config
     rm -f .config.base
 
-    # Default LAN IP 192.168.1.1 -> 192.168.3.1.
+    # Default LAN IP 192.168.1.1 -> 192.168.123.1.
     cfg_file="package/base-files/files/bin/config_generate"
     if [ -f "$cfg_file" ]; then
-      sed -i 's/192\.168\.1\.1/192.168.3.1/g' "$cfg_file"
+      sed -i 's/192\.168\.1\.1/192.168.123.1/g' "$cfg_file"
     else
       echo "Missing file: $cfg_file" >&2
       exit 1
